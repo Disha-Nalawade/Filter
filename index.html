@@ -1,11 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Filter</title>
-</head>
-<body>
-    
-</body>
+    <style>
+      #search {
+        padding: 10px;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Search Bar</h1>
+    <input
+      type="text"
+      placeholder="Search here"
+      id="search"
+      onkeypress="search()"
+    />
+    <div id="student-container"></div>
+    <script>
+      const student = [
+        {
+          name: "Disha",
+          age: 21,
+          class: "A",
+        },
+        {
+          name: "Prisha",
+          age: 22,
+          class: "B",
+        },
+        {
+          name: "Kanchan",
+          age: 51,
+          class: "C",
+        },
+        {
+          name: "Hridaya",
+          age: 32,
+          class: "A",
+        },
+      ];
+
+      const studentContainer = document.getElementById("student-container");
+      student.forEach((user) => {
+        
+      });
+      function search() {
+        const searchbar = document.getElementById("search");
+        const searchbarvalue = search.value;
+      }
+
+      // const userwhois21 = student.filter((user) => {
+      //   if (user.name == "Disha") {
+      //     return true;
+      //   } else {
+      //     return false;
+      //   }
+      // });
+      // console.log(userwhois21);
+    </script>
+  </body>
 </html>
