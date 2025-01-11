@@ -9,6 +9,10 @@
         padding: 10px;
         border-radius: 10px;
       }
+      .studcontainer {
+        padding: 2px;
+        margin: 10px;
+      }
     </style>
   </head>
   <body>
@@ -17,50 +21,42 @@
       type="text"
       placeholder="Search here"
       id="search"
-      onkeypress="search()"
+      onkeyup="search()"
     />
     <div id="student-container"></div>
     <script>
       const student = [
-        {
-          name: "Disha",
-          age: 21,
-          class: "A",
-        },
-        {
-          name: "Prisha",
-          age: 22,
-          class: "B",
-        },
-        {
-          name: "Kanchan",
-          age: 51,
-          class: "C",
-        },
-        {
-          name: "Hridaya",
-          age: 32,
-          class: "A",
-        },
+        "Disha",
+        "Prisha",
+        "Hridaya",
+        "Tirtha",
+        "Trishika",
+        "Hir",
+        "Sakshi",
+        "Arav",
+        "Ruturaj",
+        "Shree",
+        "Yash",
+        "Prithvi",
       ];
 
       const studentContainer = document.getElementById("student-container");
       student.forEach((user) => {
-        
+        studentContainer.innerHTML += `<div class="studcontainer"> ${user}</div>`;
       });
       function search() {
         const searchbar = document.getElementById("search");
-        const searchbarvalue = search.value;
+        const searchbarvalue = searchbar.value.toLowerCase();
+        studentContainer.innerHTML = " ";
+        const filtersearch = student.filter((user) => {
+          if (user.toLowerCase().includes(searchbarvalue)) {
+            return true;
+          }
+        });
+        filtersearch.forEach((user) => {
+          studentContainer.innerHTML += `<div class="studcontainer"> ${user}</div>`;
+        });
       }
-
-      // const userwhois21 = student.filter((user) => {
-      //   if (user.name == "Disha") {
-      //     return true;
-      //   } else {
-      //     return false;
-      //   }
-      // });
-      // console.log(userwhois21);
     </script>
   </body>
 </html>
